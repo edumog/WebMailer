@@ -1,0 +1,7 @@
+﻿@model IEnumerable<WebMailer.Models.Location>
+
+@foreach (var item in Model)
+{
+    <option value="@item.LocationID">@Html.DisplayFor(modelItem => item.LocationName)</option>
+}
+

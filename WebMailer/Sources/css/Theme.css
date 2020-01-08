@@ -1,0 +1,221 @@
+﻿:root {
+    --lighting-color: #cecece;
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI' Verdana Tahoma;
+}
+body {
+    background:#eeeeee;
+}
+
+.lighting-color {
+    color: var(--lighting-color);
+}
+
+::-webkit-input-placeholder {
+    color: #000;
+}
+::-moz-input-placeholder {
+    color: #000;
+}
+::-o-input-placeholder {
+    color: #000;
+}
+::-ms-input-placeholder {
+    color: #000;
+}
+::placeholder{
+    color: #000;
+}
+
+.input-container, .btn-container, .banner, .form-container {
+    text-align:center;
+}
+
+.restore-pass a:link, .restore-pass a:hover, .restore-pass a:active, .restore-pass a:visited {
+    color : #cecece;
+}
+
+.main-container {
+    padding: 5em 0;
+    background-color: #1e75bb;
+    height: 100%;
+}
+
+.form-container {
+    margin:0 auto;
+    width: 100%;
+    padding-top: .5em;
+    padding-bottom: 1em;
+}
+
+/* Continuar con la revision desde aqui */
+
+.form-container form div {
+    padding-bottom: .7em;
+}
+
+.lbl, #admMen > ul li {
+    font-weight: bold;
+    font-size: 14pt;
+    color: white;
+}
+
+.lbl {
+    width: 100%;
+}
+   
+
+
+.cbx, .txt,.edt{
+    width:90%;
+    max-width:400px;
+    outline:none;
+    border:none;
+    padding:0.5em;
+    cursor:pointer;
+    margin-top:1em;
+    background-color:rgba(255,255,255,0.8);
+}
+
+.cbx:hover, .txt:hover, .edt:hover {
+    background-color:rgba(255,255,255,0.9);
+}
+
+.cbx:focus, .txt:focus, .edt:focus {
+    background-color:rgba(255,255,255,1);
+}
+
+.edt {
+    cursor: text;
+    resize: none;
+
+}
+
+/*span.title {
+    font-weight:bold;
+    font-size:16pt;
+}*/
+
+.hgroupA{
+    margin:0 auto;
+    width:400px;
+    text-align:left;
+}
+
+.hgroupA, .subtitle {
+    text-align:center;
+    color: #fff;
+}
+
+.secondary-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 70%;
+    min-width: 825px;
+    padding-top: .5em;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    box-shadow: 8px 5px rgba(14, 47, 72, 0.50);
+    border-radius: 2px;
+}
+
+.tab th{
+    font-weight: bold;
+    font-size:16pt;
+}
+
+.tab td{
+    font-size:16pt;
+}
+.tab td a{
+    font-size: 13pt;
+}
+.tab th, .tab td {
+    padding-left:10pt;
+}
+
+.show-pass {
+    background-image: url('../img/Icon01.png');
+    background-position: 0 3px;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 19px;
+    cursor: pointer;
+    margin: 15px 0 0 -38px;
+    padding-top: -8px;
+    position: absolute;
+    display: inline-block;
+}
+
+.hiden-pass {
+    background-position: -26px 3px;
+    width: 27px;
+    height: 19px;
+    transition: transform .5s;
+}
+
+
+
+
+
+
+.text-editor-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em 0;
+}
+
+.centered {
+    text-align: center;
+    margin: auto;
+    background: red;
+}
+
+.position {
+    margin: auto;
+    padding: .5em 0 0 0;
+}
+
+.link-icon a {
+    padding-right: .5em;
+    color: #000;
+}
+
+.link-icon a:hover {
+    text-decoration: none;
+}
+
+.btn-container {
+    padding-top: 1em;
+    padding-bottom: .5em;
+}
+
+.footer{
+    height: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.link-icon-confirm a, .cancel-link-icon a {
+    font-size: 2em;
+}
+
+.link-icon-confirm a {
+    color: lawngreen;
+
+}
+
+.cancel-link-icon a {
+    color: red;
+}
+
+.link-icon-confirm a:hover, .link-icon-confirm a:active {
+    color: #54a911;
+}
+
+.cancel-link-icon a:hover, .cancel-link-icon a:active {
+    color: #8e0b0b;
+}

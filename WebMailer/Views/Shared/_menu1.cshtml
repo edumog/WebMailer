@@ -1,0 +1,15 @@
+﻿<nav class="bar">
+    <section id="admMen">
+        <ul>
+            <li>
+                @Html.ActionLink("Campañas", "GetCampaignsFromAuthenticatedUser", "Campaigns")
+            </li>
+            @if (HttpContext.Current.User.IsInRole("Administrador"))
+            {
+                <li>
+                    @Html.ActionLink("Opciones", "GetUsers", "Users")
+                </li>
+            }
+        </ul>
+    </section>
+</nav>

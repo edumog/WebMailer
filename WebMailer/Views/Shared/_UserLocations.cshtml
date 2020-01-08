@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebMailer.Models.Location>
+
+@{
+    ViewBag.Title = "assignment";
+}
+<h2>Sedes para asignadar</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationName)
+            </td>
+            <td>
+                @Html.ActionLink("Asignar esta sede", "AssignLocation", "UserLocation", new { loc = item.LocationID}, new { })
+                
+            </td>
+        </tr>
+    }
+
+</table>
+

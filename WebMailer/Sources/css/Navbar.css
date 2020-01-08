@@ -1,0 +1,38 @@
+﻿.bar {
+    background: #ff4600;
+    height: 50px;
+}
+
+.bar section {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    top: 0.5em;
+}
+
+.bar section ul {
+    margin-left: 6em;
+    list-style-type: none;
+}
+
+.bar section ul li {
+    display: inline;
+}
+
+.bar section ul li span.lbl {
+    position: relative;
+    color: #fff;
+    font-size: 12pt;
+    top: -0.6em;
+}
+
+#admMen > ul li {
+    font-size: 20pt;
+    margin: auto,auto;
+    padding-left: 10pt;
+}
+
+#admMen > ul li a, #admMen > ul li a:active, #admMen > ul li a:visited, #admMen > ul li a:hover {
+    color: white;
+    text-decoration: none;
+}

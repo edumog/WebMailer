@@ -1,0 +1,39 @@
+﻿@model WebMailer.Models.Mail
+
+@{
+    ViewBag.Title = "Inicio";
+}
+
+@Html.Action("_menu1", "Home")
+
+<section class="main-container form-container">
+    @using (Html.BeginForm("SendMail", "Mail"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div>
+            <label class="lbl">
+                <select name="idLoc" id="loc" class="cbx">
+                    @Html.Action("_Locations", "Location")
+                </select>
+            </label>
+        </div>
+        <div>
+            <label class="lbl">
+                <select name="idCam" id="cam" class="cbx" , required="required"></select>
+            </label>
+        </div>
+        <div>
+            <textarea name="To" id="mails" class="edt" required="required" cols="75" rows="10" placeholder="Destinatarios Ejemplo: example@lourtec.com"></textarea>
+        </div>
+        <div>
+            <button id="Button1" type="submit" class="btn btn-success btn-outline-light btn-lg" runat="server">Enviar</button>
+        </div>
+    }
+</section>
+
+@section Scripts{
+
+    <script defer src="~/Sources/Scripts/index.js"></script>
+    <link rel="stylesheet" href="@Url.Content("~/Sources/css/Navbar.css")" />
+}

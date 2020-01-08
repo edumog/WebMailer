@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Eliminar usuario";
+}
+<article class="main-container">
+    <section class="form-container">
+        <h1>
+            Seguro desea eliminar al usuario @ViewBag.Name
+        </h1>
+        <span class="link-icon link-icon-confirm">
+            @Html.ActionLink(" ", "Delete", "Account", new { name = ViewBag.name }, new { @class = "icon-checkmark" })
+        </span>
+        <span class="link-icon cancel-link-icon">
+            @Html.ActionLink(" ", "GetUsers", "Users", new { }, new { @class = "icon-cross" })
+        </span>
+        
+        
+    </section>
+</article>

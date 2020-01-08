@@ -1,0 +1,30 @@
+﻿@model WebMailer.Models.Location
+
+@{
+    ViewBag.Title = "Agregar sede";
+}
+@Html.Action("_adminMenu", "Home")
+<article class="main-container">
+    <div class="secondary-container form-container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <hr />
+                @Html.ValidationSummary()
+                <div>
+                    @Html.LabelFor(model => model.LocationName)
+
+                    @Html.EditorFor(model => model.LocationName, new { htmlAttributes = new { @class = "txt", required = "required" } })
+                </div>
+
+                <button type="submit" class="btn btn-success btn-outline-light btn-lg">Registrar  sede</button>
+            </div>
+        }
+    </div>
+</article>
+
+@section Scripts{
+    <link rel="stylesheet" href="@Url.Content("~/Sources/css/Navbar.css")" />
+}

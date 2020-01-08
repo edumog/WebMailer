@@ -1,0 +1,36 @@
+﻿@model WebMailer.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+} 
+<article class="main-container form-container">
+    <div>
+        <span class="lighting-color">Iniciar Sesión</span>
+    </div>
+    
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "El registro no fue exitoso por favor corrija los errores e inténtelo de nuevo.")
+
+            <div>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "txt", placeholder = "Nombre de usuario", id = "mail", maxlength = "50", required = "required" })
+            </div>
+
+            <div>
+                @Html.PasswordFor(m => m.Password, new { @class = "txt", id = "pwd", placeholder = "Contraseña", maxlength = "20", required = "required" })
+            </div>
+
+            <div class="form-check">
+                @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input", id = "RememberMe" })
+                @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label lighting-color" })
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-success btn-outline-light btn-lg">Ingresar</button>
+            </div>
+        }
+<div>
+    <span class="lighting-color restore-pass">¿Olvido su contraseña? Agá clic @Html.ActionLink("aquí ", "ForgotPassword", "Account")</span>
+</div>
+</article>

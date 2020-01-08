@@ -1,0 +1,59 @@
+﻿.banner {
+    padding-top: .7em;
+    margin: 0 0;
+}
+
+banner section {
+    width: 100%;
+}
+
+.banner section img {
+    display: inline;
+    margin: 0;
+    margin-right: 10em;
+}
+
+.banner > ul li {
+    display: inline;
+    float: right;
+    margin-left: .3em;
+}
+
+    .banner > ul li > span {
+        position: relative;
+        top: -.5em;
+        font-size: .9em;
+    }
+
+.banner section img:last-child {
+    position: relative;
+    left: 10em;
+    top: -0.5em;
+}
+
+.logoff, .registered-users {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.registered-users {
+    background: url('../../img/Icon03.png') 0 0;
+    background-repeat: no-repeat;
+}
+
+.logoff {
+    background: url('../../img/Icon02.png') 0 0;
+    background-repeat: no-repeat;
+}
+
+.logoff:hover, .registered-users:hover {
+    background-position: -23px;
+    background-position-y: 0px;
+}
+
+.logoff:active, .registered-users:active {
+    background-position: -46px;
+    background-position-y: 0px;
+}

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebMailer.Models.GetCampaigns>
+
+@{
+    ViewBag.Title = "GetCampaigns";
+}
+@Html.Action("_CampaignsMenu", "Home")
+<div class="main-container">
+    <table class="tab secondary-container">
+        @if (Model.Count() != 0)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignName)
+                </th>
+            </tr>
+
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CampaignName)
+                    </td>
+                    <td>
+                        <span class="link-icon">@Html.ActionLink(" ", "GetCampaignToEdit", "Campaigns", new { idCampaign = item.CampaignID }, new { @class = "icon-pencil" }) </span>
+                        <span class="link-icon">@Html.ActionLink(" ", "Delete", "Campaigns", new { id = item.CampaignID }, new { @class = "icon-bin" }) </span>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <th>
+                    No existen campañas en sus sedes asociadas.
+                </th>
+            </tr>
+        }
+    </table>
+</div>
+
+@section Scripts{
+    <link rel="stylesheet" href="@Url.Content("~/Sources/css/Navbar.css")" />
+}

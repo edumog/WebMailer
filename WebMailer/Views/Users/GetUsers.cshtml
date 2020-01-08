@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebMailer.Models.UserInformation>
+
+@{
+    ViewBag.Title = "GetUsers";
+}
+
+@Html.Action("_adminMenu", "Home")
+
+<article class="main-container">
+    <div class="secondary-container">
+        <table class="tab">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CorporateEmail)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CorporateEmail)
+                    </td>
+                    <td>
+                        <span class="link-icon">@Html.ActionLink(" ", "Assignment", "UserLocation", new { id = item.UserId }, new { @class = "icon-office" })</span>
+                        <span class="link-icon">@Html.ActionLink(" ", "GetRoles", "Role", new { userName = item.UserName }, new { @class = "icon-users" })</span>
+                        @if (User.Identity.Name != item.UserName)
+                        {
+                            <span class="link-icon">@Html.ActionLink(" ", "DeleteConfirmed", "Account", new { name = item.UserName }, new { @class = "icon-bin" })</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</article>
+
+@section Scripts{
+    <link rel="stylesheet" href="@Url.Content("~/Sources/css/Navbar.css")" />
+}

@@ -1,0 +1,45 @@
+﻿@model WebMailer.Models.CreateCampaign
+@{
+    ViewBag.Title = "Crear campaña";
+}
+@Html.Action("_CampaignsMenu", "Home")
+
+    <div class="main-container">
+        <h2 class="subtitle">Crear campaña</h2>
+
+        @using (Html.BeginForm("CreateCampaign", "Campaigns", FormMethod.Post, new { id = "fmr", @class = "form-container" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            <p>
+                <h4>
+                    Nombre de la campaña
+                </h4>
+                @Html.TextBoxFor(m => m.CampaignName, new { @class = "txt", id = "usr", maxlength = "50", required = "required" })
+            </p>
+            <p>
+                <label class="lbl">
+                    <select name="idLoc" id="loc" class="cbx" required="required">
+                        @Html.Action("_Locations", "Location")
+                    </select>
+                </label>
+            </p>
+            <div class="text-editor-container">
+                <span>
+                    @Html.TextAreaFor(m => m.Content, htmlAttributes: new { @id = "cont" })
+                </span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success btn-lg">Guardar</button>
+            </div>
+        }
+    </div>
+
+
+@section Scripts
+{
+    <script defer src="~/Sources/Scripts/ckeditor/ckeditor_basic.js"></script>
+    <script defer src="~/Sources/Scripts/main.js"></script>
+    <script defer src="~/Sources/Scripts/CreateCampaign.js"></script>
+    <link rel="stylesheet" href="@Url.Content("~/Sources/css/Navbar.css")" />
+}

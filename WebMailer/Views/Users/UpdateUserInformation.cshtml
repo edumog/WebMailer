@@ -1,0 +1,74 @@
+﻿@model WebMailer.Models.UpdateModel
+
+@{
+    ViewBag.Title = "Actualizar perfil";
+}
+
+@Html.Action("_Menu1", "Home")
+<div class="main-container">
+    <hgroup class="hgroupA">
+        <h1>@ViewBag.Title.</h1>
+        <h2>Actualizar información</h2>
+    </hgroup><br />
+    <section class="secondary-container form-container">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <div>
+                <h3> @Html.LabelFor(model => model.FirstName)</h3>
+                <span>
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "txt", id = "usr", maxlength = "50", required = "required" })
+                </span>
+            </div><br />
+
+            <div>
+                <h3>@Html.LabelFor(model => model.LastName)</h3>
+                <span>
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "txt", id = "Lnusr", maxlength = "50", required = "required" })
+                </span>
+            </div><br />
+
+            <div>
+                <h3>@Html.LabelFor(model => model.Email)</h3>
+                <span>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "txt", id = "Mail", maxlength = "50", type = "email", required = "required" })
+                </span>
+            </div><br />
+
+            <div>
+                <h3>@Html.LabelFor(model => model.PasswordEmail)</h3>
+                <span>
+                    @Html.TextBoxFor(m => m.PasswordEmail, new { @class = "txt", id = "MailPass", maxlength = "50", required = "required" })
+                </span>
+                <div class="show-pass"></div>
+            </div>
+
+            <br />
+
+            <div>
+                <h3>@Html.LabelFor(model => model.CorporateEmail)</h3>
+                <span>
+                    @Html.TextBoxFor(m => m.CorporateEmail, new { @class = "txt", id = "CorpMail", maxlength = "50" })
+                </span>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-success btn-outline-light btn-lg">Actualizar</button>
+            </div>
+        }
+        <div>
+            <span>
+                @Html.ActionLink("Cambiar la contraseña", "ChangePassword", "Account")
+            </span>
+        </div>
+    </section>
+</div>
+
+@section Scripts
+{
+    <script src="~/Sources/Scripts/UpdateUserInformation.js"></script>
+    <link rel="stylesheet" href="@Url.Content("~/Sources/css/Navbar.css")" />
+}

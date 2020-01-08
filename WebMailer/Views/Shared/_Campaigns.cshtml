@@ -1,0 +1,7 @@
+﻿@model IEnumerable<WebMailer.Models.Campaign>
+
+@foreach (var item in Model)
+{
+    <option value="@item.CampaignID">@Html.DisplayFor(modelItem => item.CampaignName)</option>
+}
+

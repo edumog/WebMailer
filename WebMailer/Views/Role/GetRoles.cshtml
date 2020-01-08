@@ -1,0 +1,36 @@
+﻿@model WebMailer.Models.AddRoleViewModel
+
+@{
+    IList<WebMailer.Models.ApplicationRole> roles = ViewBag.roles;
+    WebMailer.Models.ApplicationUser user = ViewBag.User;
+    ViewBag.Title = "Asignar rol";
+}
+
+<article class="main-container">
+    <section class="form-container">
+        <hgroup class="hgroupA">
+            <h2>@ViewBag.Title</h2>
+            <h3>Asignar rol al usuario @user.UserName</h3>
+        </hgroup>
+        
+        @using (Html.BeginForm("AddRole", "Account", FormMethod.Post))
+         {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <input name="UserId" id="user_Id" type="hidden" value="@user.Id" />
+            <p>
+                <label class="lbl">
+                    <select name="RoleName" id="roleName" class="cbx" required="required">
+                        @foreach (var item in roles)
+                        {
+                            <option value="@item.Name">@Html.DisplayFor(modelItem => item.Name)</option>
+                        }
+                    </select>
+                </label>
+            </p>
+
+            <button type="submit" class="btn btn-success btn-outline-light btn-lg">Continuar</button>
+        }
+    </section>
+</article>

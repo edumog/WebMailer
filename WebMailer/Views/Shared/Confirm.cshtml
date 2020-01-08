@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Confirm";
+}
+<article class="main-container">
+    <section class="form-container">
+        <h1 class="hgroupA">
+            @ViewBag.confirmation
+        </h1>
+        @if (ViewBag.controler == null && ViewBag.action == null)
+        {
+            @Html.ActionLink("Continuar", "Default", "Users")
+        }
+        else
+        {
+            string action = ViewBag.action, controller = ViewBag.controller;
+            @Html.ActionLink("Continuar", action, controller, new { }, new { @class = "btn btn-success btn-outline-light btn-lg" })
+        }
+    </section>
+</article>
+        
